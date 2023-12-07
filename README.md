@@ -38,7 +38,7 @@ The arm configuration is defined through the dictionary `joints`. The value `lin
 
 If needed, target and obstacle positions and directions (encoded in the arrays `obj_pos` and `obj_dirs`) can be manually through the function `sample_objects` in *environment/window.py*.
 
-### Active inference
+### Agent
 
 The script *simulation/inference.py* contains a subclass of `Window` in *environment/window.py*, which is in turn a subclass `pyglet.window.Window`. The only overriden function is `update`, which defines the instructions to run in a single cycle. Specifically, the subclass `Inference` initializes the agent and the objects; during each update, it retrieves proprioceptive and visual observations through functions defined in *environment/window.py*, calls the function `inference_step` of the agent, and finally moves the arm and the objects.
 
