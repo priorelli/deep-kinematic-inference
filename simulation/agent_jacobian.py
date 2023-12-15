@@ -88,7 +88,7 @@ class AgentJacobian:
 
     def get_e_g(self, S, P):
         """
-        Get generative prediction errors
+        Get sensory prediction errors
         :param S: observations
         :param P: predictions
         """
@@ -108,7 +108,7 @@ class AgentJacobian:
     def get_likelihood(self, E_g):
         """
         Get likelihood components
-        :param E_g: generative prediction errors
+        :param E_g: sensory prediction errors
         """
         lkh = {}
 
@@ -196,7 +196,7 @@ class AgentJacobian:
         # Get intentions
         I = self.get_i(target_joint, target_pos)
 
-        # Get generative prediction errors
+        # Get sensory prediction errors
         E_g = self.get_e_g((S[0], S[1][-1]), P)
 
         # Get dynamics prediction errors

@@ -1,4 +1,4 @@
-import numpy as np
+-import numpy as np
 from numpy.linalg import norm
 import utils
 import config as c
@@ -124,7 +124,7 @@ class AgentDeep:
 
     def get_e_g(self, S, P):
         """
-        Get generative prediction errors
+        Get sensory prediction errors
         :param S: observations
         :param P: predictions
         """
@@ -147,7 +147,7 @@ class AgentDeep:
     def get_likelihood(self, E_g, P):
         """
         Get likelihood components
-        :param E_g: generative prediction errors
+        :param E_g: sensory prediction errors
         :param P: predictions
         """
         lkh = {}
@@ -271,7 +271,7 @@ class AgentDeep:
         # Get intentions
         I = self.get_i(target_joint, target_pos)
 
-        # Get generative prediction errors
+        # Get sensory prediction errors
         E_g = self.get_e_g((self.mu_ext[0], *S), P)
 
         # Get dynamics prediction errors
