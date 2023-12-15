@@ -14,7 +14,7 @@ Check [this](https://priorelli.github.io/blog/) and [this](https://priorelli.git
 
 ### Start the simulation
 
-`All the simulations of the paper are located in the folder *demos/*.`
+**All the simulations of the paper are located in the folder *demos/*.**
 
 The simulation can be launched through *main.py*, either with the option `-m` for manual control, `-s` for the IE (shallow) model, `-d` for the deep hierarchical model (deep), `-j` for the standard Jacobian control, or `-a` for choosing the parameters from the console. If no option is specified, the last one will be launched. For the manual control simulation, the arm can be moved with the keys `Z`, `X`, `A`, `S`, `LEFT`, `RIGHT`, `UP` and `DOWN`.
 
