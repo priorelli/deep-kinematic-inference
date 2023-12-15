@@ -36,7 +36,7 @@ The variable `task` affects the goal of the active inference agent, and can assu
 
 The variable `context` specifies whether (`dynamic`) or not (`static`) the red target and the green obstacle move. The velocity is set by `target_vel`.
 
-The arm configuration is defined through the dictionary `joints`. The value `link` specifies the joint to which the new one is attached; `angle` encodes the starting value of the joint; `limit` defines the min and max angle limits.
+The agent configuration is defined through the dictionary `joints`. The value `link` specifies the joint to which the new one is attached; `angle` encodes the starting value of the joint; `limit` defines the min and max angle limits.
 
 If needed, target and obstacle positions and directions (encoded in the arrays `obj_pos` and `obj_dirs`) can be manually through the function `sample_objects` in *environment/window.py*.
 
