@@ -4,13 +4,17 @@
   <img src="/reference/images/env.png">
 </p>
 
-This is the project related to the paper [Deep kinematic inference affords efficient and scalable control of bodily movements](https://www.biorxiv.org/content/10.1101/2023.05.04.539409v2). It describes an active inference model that affords a simple but effective mapping from extrinsic to intrinsic coordinates via inference, and easily scales up to drive complex kinematic chains. The proposed model can realize a variety of tasks such as tracking a target while avoiding an obstacle, making lateral movements while maintaining a vertical orientation, performing circular movements; it can also deal with human-body kinematics or complex trees with multiple ramifications. The paper [Efficient motor learning through action-perception cycles in deep kinematic inference](https://link.springer.com/chapter/10.1007/978-3-031-47958-8_5) extends this model with an algorithms that allows to learn the kinematic chain during goal-directed behavior.
+This is the project related to the paper [Deep kinematic inference affords efficient and scalable control of bodily movements](https://doi.org/10.1073/pnas.2309058120). It describes an active inference model that affords a simple but effective mapping from extrinsic to intrinsic coordinates via inference, and easily scales up to drive complex kinematic chains. The proposed model can realize a variety of tasks such as tracking a target while avoiding an obstacle, making lateral movements while maintaining a vertical orientation, performing circular movements; it can also deal with human-body kinematics or complex trees with multiple ramifications. The paper [Efficient motor learning through action-perception cycles in deep kinematic inference](https://link.springer.com/chapter/10.1007/978-3-031-47958-8_5) extends this model with an algorithms that allows to learn the kinematic chain during goal-directed behavior.
+
+Video simulations are found [here](https://priorelli.github.io/projects/2_deep_inference/).
 
 Check [this](https://priorelli.github.io/blog/) and [this](https://priorelli.github.io/projects/) for additional guides and projects.
 
 ## HowTo
 
 ### Start the simulation
+
+All the simulations of the paper are located in the folder *demos/*.
 
 The simulation can be launched through *main.py*, either with the option `-m` for manual control, `-s` for the IE (shallow) model, `-d` for the deep hierarchical model (deep), `-j` for the standard Jacobian control, or `-a` for choosing the parameters from the console. If no option is specified, the last one will be launched. For the manual control simulation, the arm can be moved with the keys `Z`, `X`, `A`, `S`, `LEFT`, `RIGHT`, `UP` and `DOWN`.
 
