@@ -24,6 +24,8 @@ More advanced parameters can be manually set from *config.py*. Custom log names 
 
 The parameter `lr_length` controls the learning rate of the length beliefs. If it is set to 0, these beliefs will not be updated.
 
+The parameters `k_rep` and `avoid_dist` respectively control the gain of the repulsive force, and the distance after which the force cannot affect the agent.
+
 Different precisions have been used for the shallow and deep models: for the former, the visual precision `pi_vis` has been set to 1.0, while the extrinsic precision `pi_ext` to 0.05; for the latter, the visual precision `pi_vis` has been set to 0.1, while the extrinsic precision `pi_ext` to 0.5.
 
 The variable `task` affects the goal of the active inference agent, and can assume the following values:
@@ -42,7 +44,9 @@ If needed, target and obstacle positions and directions (encoded in the arrays `
 
 The script *simulation/inference.py* contains a subclass of `Window` in *environment/window.py*, which is in turn a subclass `pyglet.window.Window`. The only overriden function is `update`, which defines the instructions to run in a single cycle. Specifically, the subclass `Inference` initializes the agent and the objects; during each update, it retrieves proprioceptive and visual observations through functions defined in *environment/window.py*, calls the function `inference_step` of the agent, and finally moves the arm and the objects.
 
-There are three different classes for the agents, corresponding to the shallow, deep, or jacobian models. All of them have a similar function `inference_step`.
+There are three different classes for the agents, corresponding to the shallow, deep, or jacobian models. All of them have a similar function `inference_step`. In particular, the function `get_p` returns visual (Cartesian position) and proprioceptive (joint angle) predictions, and an additional extrinsic (Cartesian position and absolute orientation) prediction for the shallow and deep models. The function `get_i` returns intrinsic and extrinsic future beliefs depending on the agent's intentions, e.g., reach a Cartesian position or an angle with a specific joint. Note that for simplicity desired target joints and positions are directly provided as input to the function, but they could also be inferred through sensory observations. Functions `get_e_g` and `get_e_mu` compute sensory and dynamics prediction errors, respectively. The function `get_likelihood` backpropagates the sensory errors toward the beliefs, calling the function `grad_ext` to compute the extrinsic gradient, which is also used for learning of limb lengths. Note that in the deep model each joint is affected by the likelihoods `lkh_ext` of all the joints it is attached to. Note also that the proprioceptive prediction error is not used for assessing performances during inference only. Finally, the function `mu_dot` computes the total belief updates, also considering the backward and forward errors `E_mu` of the dynamics functions and, in the shallow and deep models, the repulsive forces computed through `get_rep_force`.
+
+Limb lengths can be initialized through the function `init_belief`.
 
 Useful trajectories computed during the simulations are stored through the class `Log` in *environment/log.py*.
 
