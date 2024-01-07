@@ -1,4 +1,4 @@
--import numpy as np
+import numpy as np
 from numpy.linalg import norm
 import utils
 import config as c
