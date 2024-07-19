@@ -10,6 +10,8 @@ Video simulations are found [here](https://priorelli.github.io/projects/2_deep_i
 
 Check [this](https://priorelli.github.io/blog/) and [this](https://priorelli.github.io/projects/) for additional guides and projects.
 
+This study has received funding from the [MAIA project](https://site.unibo.it/maia-fetproact/en), under the European Union's Horizon 2020 Research and Innovation programme.
+
 ## HowTo
 
 ### Start the simulation
