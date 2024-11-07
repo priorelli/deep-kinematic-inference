@@ -204,10 +204,10 @@ class AgentShallow:
         Compute repulsive force
         :param obstacle_pos: obstacle position
         """
-        pos_norm = utils.normalize(obstacle_pos, c.norm_polar)
+        pos_norm = utils.normalize(obstacle_pos, c.norm_cart)
 
-        avoid_dist = c.target_size + 20
-        q_star = utils.normalize(avoid_dist, c.norm_polar)
+        avoid_dist = c.target_size + 30
+        q_star = utils.normalize(avoid_dist, c.norm_cart)
         error_r = pos_norm - self.mu_ext[0]
         error_r_norm = norm(error_r)
 
